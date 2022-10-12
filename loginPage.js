@@ -16,7 +16,6 @@ export const LoginPage = () => {
 
   const handleClick = (e) => {
     e.preventDefault();
-
     fetch('https://reqres.in/api/login', {
       method: 'POST',
       body: JSON.stringify({
@@ -69,7 +68,11 @@ export const LoginPage = () => {
                 className="inputClass"
                 onChange={(e) => setLoginPassword(e.target.value)}
               />
-              <FontAwesomeIcon className="seePassword" icon={faEye} />
+              <FontAwesomeIcon
+                toggle="#password-field"
+                className="seePassword"
+                icon={faEye}
+              />
             </div>
             <div className="agreeDiv">
               <input type="checkbox"></input>
