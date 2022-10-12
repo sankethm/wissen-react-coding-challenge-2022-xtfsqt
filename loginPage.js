@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye } from '@fortawesome/free-solid-svg-icons';
+import { useDispatch, useSelector } from 'react-redux';
 
 export const LoginPage = () => {
+  const [loginEmail, setLoginEmail] = useState('');
+  const [loginPassword, setLoginPassword] = useState('');
+  const dispatch = useDispatch();
   return (
     <div className="loginBox">
       <img
@@ -15,11 +19,25 @@ export const LoginPage = () => {
         <form className="loginForm">
           <div>
             <label>Username/Email</label>
-            <input type="text" className="inputClass" />
+            <input
+              type="email"
+              placeholder="Email"
+              required
+              value={loginEmail}
+              className="inputClass"
+              onChange={(e) => setLoginEmail(e.target.value)}
+            />
           </div>
           <div>
             <label>Password</label>
-            <input type="password" className="inputClass" />
+            <input
+              type="password"
+              placeholder="Password"
+              required
+              value={loginPassword}
+              className="inputClass"
+              onChange={(e) => setLoginPassword(e.target.value)}
+            />
             <FontAwesomeIcon className="seePassword" icon={faEye} />
           </div>
           <div className="agreeDiv">
