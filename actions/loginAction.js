@@ -1,17 +1,24 @@
 import * as ActionTypes from '../actionTypes';
 
-import axios from 'axios';
+export const login = (email, password) => (dispatch) => {
+  dispatch({ type: ActionTypes.LOGIN_LOADING });
 
-export const login = (email, password) => async (dispatch) => {
-  try {
-    dispatch({ type: ActionTypes.LOGIN_LOADING });
-
-    const config = { headers: { 'content-type': 'application/json' } };
-
-    const { data } = await axios.post('', { email, password }, config);
-
-    dispatch({ type: ActionTypes.LOGIN_SUCCESS, payload: data });
-  } catch (error) {}
+  fetch('https://reqres.in/api/login', {
+    method: 'POST',
+    body: JSON.stringify({
+      email: email,
+      password: password,
+    }),
+    headers: {
+      'Content-type': 'application/json',
+    },
+    credentials: 'same-origin',
+  })
+    .then((response) => response.json())
+    .then((data) =>
+      dispatch({ type: ActionTypes.LOGIN_SUCCESS, payload: data })
+    )
+    .catch((error) => console.log(error));
 };
 
 export const clearError = () => async (dispatch) => {

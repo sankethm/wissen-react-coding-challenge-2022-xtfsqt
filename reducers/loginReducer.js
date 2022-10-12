@@ -6,20 +6,22 @@ export const loginReducer = (state = { user: {} }, action) => {
       return {
         loading: true,
         isAuthenticated: false,
+        error: null,
+        token: '',
       };
     case ActionTypes.LOGIN_SUCCESS:
       return {
         ...state,
         loading: false,
         isAuthenticated: true,
-        user: action.payload,
+        token: action.payload.token,
       };
     case ActionTypes.LOGIN_FAILED:
       return {
         ...state,
         loading: false,
         isAuthenticated: false,
-        user: null,
+        token: null,
         error: action.payload,
       };
     case ActionTypes.CLEAR_ERROR:

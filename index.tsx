@@ -7,11 +7,11 @@ import store from './store';
 
 const App = () => {
   return (
-    <Provider store={store}>
-      <div className="container">
+    <div className="container">
+      <Provider store={store}>
         <LoginPage />
-      </div>
-    </Provider>
+      </Provider>
+    </div>
   );
 };
 
