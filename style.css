@@ -1,3 +1,78 @@
-h1, p {
+h1,
+p {
   font-family: Lato;
+}
+.container {
+  width: 100vw;
+  height: 100%;
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0%;
+  left: 0;
+}
+.loginBox {
+  background-color: rgba(125, 131, 133, 0.068);
+  width: 30vw;
+  height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 0px;
+  height: 70%;
+}
+
+.loginForm > div {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
+
+.inputClass {
+  padding: 1vmax 1vmax;
+  padding-right: 6vmax;
+  margin: 5px 0px;
+  width: 100%;
+  height: 35px;
+  box-sizing: border-box;
+  border: 1px solid black;
+  border-radius: 10px;
+  font: 300 2vmax;
+}
+
+.agreeDiv {
+  display: flex;
+  flex-direction: row !important;
+}
+.agreeDiv > input {
+  margin-right: 2vmax;
+  box-sizing: border-box;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+button {
+  width: 80%;
+  height: 35px;
+  box-sizing: border-box;
+  border: 1px solid black;
+  border-radius: 10px;
+  background-color: blue;
+  font: 300 1vmax bold;
+  color: white;
+  margin: 10px 0px;
+}
+.seePassword {
+  margin-top: -30px;
+  margin-right: 10px;
+  align-self: flex-end;
 }
