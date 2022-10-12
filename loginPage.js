@@ -7,6 +7,11 @@ export const LoginPage = () => {
   const [loginEmail, setLoginEmail] = useState('');
   const [loginPassword, setLoginPassword] = useState('');
   const dispatch = useDispatch();
+
+  const handleClick = (e) => {
+    e.preventDefault();
+    dispatch(login(loginEmail, loginPassword));
+  };
   return (
     <div className="loginBox">
       <img
@@ -47,7 +52,7 @@ export const LoginPage = () => {
               <b>Terms & Conditions and Privacy Policy</b>
             </p>
           </div>
-          <button>Login</button>
+          <button onClick={handleClick}>Login</button>
         </form>
       </div>
     </div>
